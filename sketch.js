@@ -1,18 +1,26 @@
-let txt =
-  "Most of the people of our country are farmers, workers, and day laborers who live below the poverty line. But the price of essential commodities is soaring higher and higher. It has now become impossible for them to make both ends meet. It has severely hit the day laborers, the lower and middle-class families, and the salaried class too. The prices of rice, vegetables, clothes, mustard oil, medicine, and other essential commodities are also increasing by leaps and bounds. In most cases, hoarding and black marketing are responsible for such a situation. All these have made the life of the common man miserable. The government should set up more and more fair price distribution channels for selling essential commodities. The Consumers’ Forum should also be more active to check such unreasonable hikes.";
-
-let input = [];
-let output = "";
 let slider;
-let n = 9;
 
 function setup() {
-  //createCanvas(800, 600);
-  // slider = createSlider(2, 100, 2, 1);
-  // slider.position(10, 10);
-  // slider.style("width", "100px");
-  // let n = slider.value();
-  // background(0);
+  createCanvas(800, 600);
+  background(0);
+  slider = createSlider(2, 200, 2, 1);
+  slider.position(width/2-50, height-75);
+  slider.style("width", "100px");
+  fill(255);
+  textFont("Georgia");
+  textSize(20);
+  text("2",width/2-50,height-40);
+  text("200",width/2+30,height-39);
+  text("n:",width/2-50,height-80);
+  text("Click to Generate!", width/2-85,80);
+}
+
+function mousePressed() {
+  
+  let input = [];
+  let output = "";
+  let n = slider.value();
+  background(0);
 
   for (let i = 0; i < txt.length; i += n) {
     let syntax = "";
@@ -31,11 +39,18 @@ function setup() {
     // console.log("outsyn:" + outsyn);
     input.splice(rs, 1);
   }
-  createP(output);
 
-  // fill(255);
-  // textSize(20);
-  // textFont("Georgia");
-  // textWrap(CHAR);
-  // text(output,0, 300) ;
+  fill(255);
+  textSize(20);
+  textFont("Georgia");
+  textWrap(CHAR);
+  text(output, 100, 150, 600, 600);
+  
+  fill(255);
+  textFont("Georgia");
+  textSize(20);
+  text("2",width/2-50,height-40);
+  text("200",width/2+30,height-39);
+  text("n:",width/2-50,height-80);
+  text("Click to Generate!", width/2-85,80);
 }
