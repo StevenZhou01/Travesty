@@ -18,6 +18,10 @@ function setup() {
   text("Click to Generate!", width / 2 - 85, 80);
 }
 
+function draw(){
+  mousePressed();
+}
+
 function mousePressed() {
   let input = [];
   let output = "";
