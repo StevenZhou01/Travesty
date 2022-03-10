@@ -4,24 +4,20 @@ let txt =
 let input = [];
 let output = "";
 let slider;
-
+let n = 9;
 
 function setup() {
   //createCanvas(800, 600);
-  slider = createSlider(2, 100, 2, 1);
-  slider.position(10, 10);
-  slider.style("width", "100px");
-
-}
-
-function draw() { 
- let n = slider.value();
- // background(0);
+  // slider = createSlider(2, 100, 2, 1);
+  // slider.position(10, 10);
+  // slider.style("width", "100px");
+  // let n = slider.value();
+  // background(0);
 
   for (let i = 0; i < txt.length; i += n) {
     let syntax = "";
     for (let j = 0; j < n; j++) {
-      let current = txt.charAt(i + j); 
+      let current = txt.charAt(i + j);
       syntax += current;
     }
     input[i / n] = syntax;
@@ -34,15 +30,12 @@ function draw() {
     output += outsyn;
     // console.log("outsyn:" + outsyn);
     input.splice(rs, 1);
-  
   }
+  createP(output);
 
-   fill(255);
-  textSize(20);
-  textFont("Georgia");
-  //textWrap(CHAR);
-  text(output,0, 300) ;
-  // createP(output);
-  // noLoop();
+  // fill(255);
+  // textSize(20);
+  // textFont("Georgia");
+  // textWrap(CHAR);
+  // text(output,0, 300) ;
 }
-
