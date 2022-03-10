@@ -19,7 +19,10 @@ function setup() {
 }
 
 function draw(){
-  mousePressed();
+  if(mouseIsPressed == true){
+    mousePressed() ;
+  }
+  noLoop();
 }
 
 function mousePressed() {
